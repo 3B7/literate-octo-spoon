@@ -1,3 +1,23 @@
 <div class="jumbotron" style="margin-top:25px">
   <h4 class="text-center">Fullscreen Interview <small>Users and Videos</small></h4>
 </div>
+
+<div class="container">
+  <h3>Notes/Thoughts</h3>
+  <blockquote>Q: How are you handling large numbers of resources in a single page?</blockquote>
+  <ul>
+    <li>I thought the best way of dealing with the large number of users in the users#index page was pagination. No need to load all 10k records when we can simply load 50 at a time.</li>
+    <li>Redis is also incredibly powerful for these types of use cases.</li>
+    <code>
+      # Pre Redis. Using Active Record to loop through all of the Video records<br>
+      Completed 200 OK in 1263ms (Views: 239.2ms | ActiveRecord: 242.8ms)<br>
+
+      # Using Redis.<br>
+      Completed 200 OK in 70ms (Views: 20.8ms | ActiveRecord: 1.9ms)<br>
+    </code>
+  </ul>
+  <blockquote>Q: Have you written any Rspec Unit tests for your code?</blockquote>
+  <ul>
+    <li>I have experience with Rspec and have recently started dabbling with UnitTesting. Unfortunately as I wanted to simulate a work environment I skipped over it in my pursuit of implementing charts/plots and redis. That being said I don't push out code without test. So it's definitely something I would have done at some point.</li>
+  </ul>
+</div>
