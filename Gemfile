@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'will_paginate', '~> 3.0.6'
 gem 'redis'
 gem 'unicorn'
+gem 'ffaker'
 
 group :development, :test do
   gem 'thin'
@@ -19,7 +20,6 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec', '2.14.1'
   gem 'rspec-rails'
-  gem 'ffaker'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers', '2.0', require: false
 end
