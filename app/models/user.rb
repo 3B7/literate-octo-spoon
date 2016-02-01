@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
-  # How does a user relate to a video?
-  # You should be able to run the following:
-  #    User.last.videos
+  has_many :users_video
+  has_many :videos, :through => :users_video
+
+  #pagination
+  self.per_page = 50
 end
