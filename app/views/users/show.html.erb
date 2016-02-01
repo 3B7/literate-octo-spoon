@@ -1,0 +1,30 @@
+<h1 class="text-center"><span class="glyphicon glyphicon-user" aria-hidden="true"> <%= @user.name %></h1>
+
+<table class="table">
+  <tbody>
+    <% @user.videos.in_groups_of(2, false).each do |vid| %>
+      <tr>
+        <div class="row">
+          <% if vid[0] %>
+            <div class="col-md-6">
+              <div class="box-shadow text-center">
+                <div><%= image_tag("video.png") %></div>
+                <div class="clear"></div>
+                <h5><%= link_to vid[0].title, video_path(id: vid[0].id) %><small>&nbsp;<%= Time.parse(vid[0].created_at.to_s).strftime("%a %b %e %Y %l:%M%P") %></small></h5>
+              </div>
+            </div>
+          <% end %>
+          <% if vid[1] %>
+            <div class="col-md-6">
+              <div class="box-shadow text-center">
+                <%= image_tag("video.png") %>
+                <div class="clear"></div>
+                <h5><%= link_to vid[1].title, video_path(id: vid[0].id) %><small>&nbsp;<%= Time.parse(vid[1].created_at.to_s).strftime("%a %b %e %Y %l:%M%P") %></small></h5>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,20 @@
+<div class="container">
+  <table class="table">
+    <thead>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Created At</th>
+    </thead>
+    <tbody>
+      <% @videos.each do |v| %>
+        <tr>
+          <td><%= v.id %></td>
+          <td><%= link_to v.title, video_path(id: v.id) %></td>
+          <td><%= Time.parse(v.created_at.to_s).strftime("%a %b %e %Y %l:%M%P") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= will_paginate @videos %>

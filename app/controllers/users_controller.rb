@@ -1,11 +1,9 @@
 class UsersController < ApplicationController
   def index
-    @resources = User.paginate(page: params[:page])
-    @controller = "users"
-
-    render template: "/resources/index", locals: { resources: @resources, controller: "users" }
+    @users = User.paginate(page: params[:page])
   end
 
   def show
+    @user = User.find_by_id(params[:id])
   end
 end

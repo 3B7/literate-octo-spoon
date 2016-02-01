@@ -1,0 +1,25 @@
+<% content_for :javascript do %>
+  <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<% end %>
+
+<h1 class="text-center"><i class="fa fa-bar-chart"></i> Analysis</h1>
+
+<div id="myDiv"></div>
+
+<script type="text/javascript">
+  var video_titles = <%= raw @video_titles %>;
+  var num_of_users = <%= @num_of_users %>;
+
+  var data = [
+    {
+      x: video_titles,
+      y: num_of_users,
+      type: 'bar'
+    }
+  ];
+  var layout = {
+    title: 'User Videos Bar Chart'
+  };
+
+  Plotly.plot('myDiv', data);
+</script>

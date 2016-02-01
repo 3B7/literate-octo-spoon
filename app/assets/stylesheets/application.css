@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+.box-shadow {
+  box-shadow: 2px 2px 4px #888888;
+  padding: 25px;
+  margin-bottom: 25px;
+}

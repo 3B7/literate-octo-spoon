@@ -1,0 +1,18 @@
+<table class="table table-striped">
+  <thead>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Member Since</th>
+  </thead>
+  <tbody>
+    <% users.each do |u| %>
+      <tr>
+        <td><%= u.id %></td>
+        <td><%= link_to u.name, user_path(id: u.id)  %></td>
+        <td><%= Time.parse(u.created_at.to_s).strftime("%a %b %e %Y %l:%M%P") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate users %>

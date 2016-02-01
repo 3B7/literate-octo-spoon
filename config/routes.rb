@@ -56,4 +56,5 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show]
   resources :videos, only: [:index, :show]
+  get 'dashboards' => 'dashboard#index'
 end

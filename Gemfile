@@ -18,6 +18,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'ffaker'
   gem 'factory_girl_rails'
+  gem 'shoulda-matchers', '2.0', require: false
 end
 
 group :development do

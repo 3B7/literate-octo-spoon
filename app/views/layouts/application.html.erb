@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
   <%= csrf_meta_tags %>
+
+  <%= yield :javascript %>
 </head>
 <body>
   <div class="container">
@@ -31,12 +33,17 @@
         </li>
         <li>
           <%= link_to users_path do %>
-            <span class="glyphicon glyphicon-user" aria-hidden="true"> Users</span>
+            <i class="fa fa-users"></i> Users</span>
           <% end %>
         </li>
         <li>
           <%= link_to videos_path do %>
             <span class="glyphicon glyphicon-film" aria-hidden="true"> Videos</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to dashboards_path do %>
+            <span class="glyphicon glyphicon-dashboard" aria-hidden="true"> Dashboard</span>
           <% end %>
         </li>
 
