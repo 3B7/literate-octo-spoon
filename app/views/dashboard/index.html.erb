@@ -2,11 +2,18 @@
   <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <% end %>
 
-<h1 class="text-center"><i class="fa fa-bar-chart"></i> Analysis</h1>
-
-<div id="myDiv"></div>
+<div class="row">
+  <div id="myBarDiv"></div>
+  <h5 class="text-center"><i class="fa fa-bar-chart"></i> Bar Chart</h5>
+</div>
+<div class="clear"></div>
+<div class="row">
+  <div id="myHistoDiv"></div>
+  <h5 class="text-center"><i class="fa fa-bar-chart"></i> Histogram</h5>
+</div>
 
 <script type="text/javascript">
+  // Bar Chart
   var video_titles = <%= raw @video_titles %>;
   var num_of_users = <%= @num_of_users %>;
 
@@ -21,5 +28,18 @@
     title: 'User Videos Bar Chart'
   };
 
-  Plotly.plot('myDiv', data);
+  Plotly.plot('myBarDiv', data);
+
+  // Histogram
+  var x = [];
+  var data = [
+    {
+      x: num_of_users,
+      type: 'histogram'
+    }
+  ];
+  var layout = {
+    title: "Histogram"
+  }
+  Plotly.newPlot('myHistoDiv', data);
 </script>
