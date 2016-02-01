@@ -10,10 +10,11 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'will_paginate', '~> 3.0.6'
-gem 'thin'
 gem 'redis'
+gem 'unicorn'
 
 group :development, :test do
+  gem 'thin'
   gem 'sqlite3'
   gem 'byebug'
   gem 'rspec', '2.14.1'
